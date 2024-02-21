@@ -198,6 +198,7 @@ if __name__ == '__main__':
         print(f'Processing {idx}/{len(dataset)} image')
         prompt = data[args.prompt_column]
         condition = data[args.condition_column].resize((512, 512))
+        condition = condition.convert('RGB')
         condition = np.array(condition)[:, :, ::-1].copy()  # PIL to CV2 format
 
         canny_image=None
