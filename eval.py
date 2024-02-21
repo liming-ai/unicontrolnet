@@ -184,7 +184,7 @@ if __name__ == '__main__':
     parser.add_argument("--split", type=str, default='validation')
     parser.add_argument("--strength", type=float, default=1.0, help='control guidiance strength')
     parser.add_argument("--guidiance_scale", type=float, default=7.5, help='text guidiance scale')
-    parser.add_argument("--ddim_steps", type=int, default=20)
+    parser.add_argument("--ddim_steps", type=int, default=50)
     parser.add_argument("--num_samples", type=int, default=4)
     parser.add_argument("--prompt_column", type=str, default='text')
     parser.add_argument("--condition_column", type=str, default='image')
@@ -290,12 +290,12 @@ if __name__ == '__main__':
 
 # CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='hed' --dataset_name='limingcv/MultiGen-20M_canny_eval' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='text' --condition_column='image' --image_resolution=512
 
-# CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='canny' --dataset_name='limingcv/MultiGen-20M_canny_eval' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='text' --condition_column='image' --image_resolution=512
+# CUDA_VISIBLE_DEVICES=1 python3 eval.py --task='canny' --dataset_name='limingcv/MultiGen-20M_canny_eval' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='text' --condition_column='image' --image_resolution=512
 
 # CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='depth' --dataset_name='limingcv/MultiGen-20M_depth_eval' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='text' --condition_column='image' --image_resolution=512
 
-# CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='openpose' --dataset_name='limingcv/HumanArtv2' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='prompt' --condition_column='control_pose' --image_resolution=512
+# CUDA_VISIBLE_DEVICES=1 python3 eval.py --task='openpose' --dataset_name='limingcv/HumanArtv2' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='prompt' --condition_column='control_pose' --image_resolution=512
 
 # CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='openpose' --dataset_name='limingcv/Captioned_COCOPose' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='prompt' --condition_column='control_pose' --image_resolution=512
 
-# CUDA_VISIBLE_DEVICES=0 python3 eval.py --task='seg' --dataset_name='limingcv/Captioned_ADE20K' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='prompt' --condition_column='control_seg' --image_resolution=512
+# CUDA_VISIBLE_DEVICES=1 python3 eval.py --task='seg' --dataset_name='limingcv/Captioned_ADE20K' --cache_dir='data/huggingface_datasets' --split='validation' --prompt_column='prompt' --condition_column='control_seg' --image_resolution=512
