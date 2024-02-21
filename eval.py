@@ -217,6 +217,9 @@ if __name__ == '__main__':
             for i in range(args.num_samples):
                 os.makedirs(f'{save_path}/group_{i}')
 
+        if os.path.exists(f'{save_path}/annotations/{idx}.png'):
+            continue
+
         if args.task == 'canny':
             canny_image = condition
 
